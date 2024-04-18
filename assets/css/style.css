@@ -571,6 +571,21 @@ aside {
   }
 }
 
+.chart-container {
+  width: 400px;
+  height: 400px;
+  margin: 10px;
+}
+
+#chartsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Customize Previous/Next/Dots/Autoplay */
 
 .slick-autoplay-toggle-button,
@@ -693,10 +708,11 @@ aside {
 
 /* The actual content */
 .content {
-  padding: 20px 30px;
+  padding: auto;
+  padding-top: 5px;
+  text-align:center;
   background-color: white;
   position: relative;
-  border-radius: 6px;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
