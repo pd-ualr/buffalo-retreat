@@ -30,7 +30,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.1.1/chartjs-plugin-zoom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="assets/js/slick.js"></script>
+    <script src="assets/js/waterlevel.js"></script>
 
     <!--Icons-->
     <script
@@ -48,20 +52,6 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/accessible-slick-theme.min.css"
     />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-JN9M06Y0KX"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-JN9M06Y0KX");
-    </script>
   </head>
 
   <body>
@@ -71,7 +61,7 @@
         <div class="brand">
           <div id="buffalo-icon">
             <img
-              src="/assets/img/buffalo_retreat_logo.webp"
+              src="assets/img/buffalo_retreat_logo.webp"
               alt="Buffalo Retreat Logo"
             />
           </div>
@@ -129,7 +119,7 @@
     </main>
     <!--MAIN CONTENT ENDS-->
     <!--HELP BUTTON-->
-    <a href="form.html" id="icon">
+    <a href="#" id="icon">
       <i class="fa-solid fa-headset fa-xl actualicon"></i>
     </a>
     <!--WAVES FOOTER BEGINS <3-->

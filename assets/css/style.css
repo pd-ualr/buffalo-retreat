@@ -693,10 +693,11 @@ aside {
 
 /* The actual content */
 .content {
-  padding: 20px 30px;
+  padding: auto;
+  padding-top: 5px;
+  text-align:center;
   background-color: white;
   position: relative;
-  border-radius: 6px;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
