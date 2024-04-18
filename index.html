@@ -35,6 +35,20 @@
       src="https://kit.fontawesome.com/9dcd80ae9e.js"
       crossorigin="anonymous"
     ></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JN9M06Y0KX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-JN9M06Y0KX");
+    </script>
   </head>
 
   <body>
@@ -44,7 +58,7 @@
         <div class="brand">
           <div id="buffalo-icon">
             <img
-              src="assets/img/buffalo_retreat_logo.webp"
+              src="/assets/img/buffalo_retreat_logo.webp"
               alt="Buffalo Retreat Logo"
             />
           </div>
@@ -98,10 +112,13 @@
     <!--HEADER ENDS-->
     <!--MAIN CONTENT BEGINS-->
     <main>
-      <section id="banner">
+      <section class="banner">
+        <div class="contentPic">
+          <img src="assets/img/DSC04219.png" alt="My Happy SVG" />
+        </div>
         <div class="sectionTitle">
           <h1>
-            Explore <br>
+            Explore <br />
             <span class="canoeOrange">Arkansas</span>
           </h1>
           <h2>
@@ -112,50 +129,85 @@
           <h2>Rent a cabin and canoes for a week of fun down the river.</h2>
           <h3 class="button">Plan your next trip</h3>
         </div>
-        <div class="contentPic">
-          <img src="assets/img/DSC04219.png" alt="My Happy SVG" />
-        </div>
       </section>
-            <section id="quote">
-  <div>
-          <img src="assets/img/quote_thomas.png" alt="My Happy SVG" />
-          </div>
-    <div class="bubble left">
-      <h1>"Leave No Trace"</h1>
-      <h2>- Thomas Wallace<h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo, ipsum id euismod accumsan, nulla velit ultricies enim, vitae congue lacus nulla at quam.</p>
+
+      <section id="quote">
+        <div>
+          <img src="assets/img/fishermen.jpg" alt="My Happy SVG" />
+        </div>
+        <div class="bubble left">
+          <h2>"Leave No Trace"</h2>
+          <h3>- Thomas Wallace & Bruce Bauer</h3>
+          <p>
+            The Leave No Trace Seven Principles provide guidance to enjoy our
+            natural world in a responsible way that minimizes human-created
+            impacts.
+          </p>
+          <h3 class="button" id="quotebutton">Learn More</h3>
         </div>
       </section>
       <section id="hook">
-        <div><h1>Cabins</h1>
-        <img src="assets/img/cabin_front.webp" alt="My Happy SVG" /></div>
-        <div><h1>Canoes</h1>
-        <img src="assets/img/canoe_front.webp" alt="My Happy SVG" /></div>
-        <div><h1>Shuttling</h1>
-        <img src="assets/img/shuttle_front.webp" alt="My Happy SVG" /></div>
+        <div>
+          <h1>Cabins</h1>
+          <img src="assets/img/cabin_front.webp" alt="My Happy SVG" />
+        </div>
+        <div>
+          <h1>Canoes</h1>
+          <img src="assets/img/canoe_front.webp" alt="My Happy SVG" />
+        </div>
+        <div>
+          <h1>Shuttling</h1>
+          <img src="assets/img/shuttle_front.webp" alt="My Happy SVG" />
+        </div>
       </section>
-      
+
       <section id="testaments">
-        <div id="chooseus"><h1>Why choose us</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo, ipsum id euismod accumsan, nulla velit ultricies enim, vitae congue lacus nulla at quam. <br><br>Donec ut purus a urna tincidunt venenatis. Praesent purus diam, ullamcorper ac bibendum ut, hendrerit ut eros. Etiam pulvinar gravida est a vulputate. Vestibulum gravida, dui at mollis vestibulum, purus nisl lobortis lacus, id venenatis metus dui et dui. Donec fringilla magna eu scelerisque malesuada.</p></div>
-      <div class="slideshow-container">
-        <h1>Why choose us</h1>
-<div class="mySlides" id="slide1">
-  <p>Had so much fun over the weekend with my kids! They loved canoeing in the river and hiking around. Everything out here is just so beautiful to look at.
-  </p>
-</div>
-<div class="mySlides" id="slide2">
-  <p>10/10. Can’t believe how beautiful everything is out here! The trees, the animals, the river, just all of it. Cabin was amazing and was so nice to stay in. </p>
-</div>
-<div class="mySlides" id="slide3">
-  <p>Love the Buffalo river so much! Been so many times and the cabin is so nice. The rapids are a lot of fun to take on if you have the experiences for them.</p>
-</div>
-<div class="mySlides" id="slide4">
-  <p>Renting a canoe here is so easy and nice. Very nice high quality canoe that are some much fun to use. Fun for the whole family!</p>
-</div>
-<a class="prev" onclick="plusSlides(-1)">❮</a>
-<a class="next" onclick="plusSlides(1)">❯</a>
-</div>
- </section>
+        <div id="chooseus">
+          <h1>Why choose us</h1>
+          <p>
+            At Buffalo Retreat, our family-owned business ensures personalized
+            service along the famous Buffalo National River. We go the extra
+            mile to guarantee your comfort and enjoyment. <br />
+            <br />
+            We provide top-notch canoes and gear, ensuring a safe and enjoyable
+            river experience. Whether you’re a seasoned paddler or a
+            first-timer, our equipment won’t disappoint.
+          </p>
+        </div>
+        <div id <div class="slideshow-container">
+          <h1>Testaments</h1>
+          <div class="mySlides" id="slide1">
+            <p>
+              Had so much fun over the weekend with my kids! They loved canoeing
+              in the river and hiking around. Everything out here is just so
+              beautiful to look at.
+            </p>
+            <p>-Babygirl 1</p>
+          </div>
+          <div class="mySlides" id="slide2">
+            <p>
+              10/10. Can’t believe how beautiful everything is out here! The
+              trees, the animals, the river, just all of it. Cabin was amazing
+              and was so nice to stay in.
+            </p>
+          </div>
+          <div class="mySlides" id="slide3">
+            <p>
+              Love the Buffalo river so much! Been so many times and the cabin
+              is so nice. The rapids are a lot of fun to take on if you have the
+              experiences for them.
+            </p>
+          </div>
+          <div class="mySlides" id="slide4">
+            <p>
+              Renting a canoe here is so easy and nice. Very nice high quality
+              canoe that are some much fun to use. Fun for the whole family!
+            </p>
+          </div>
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+      </section>
       <section id="map">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d866.5618996397338!2d-93.3655575!3d36.0261195!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzbCsDAxJzMzLjYiTiA5M8KwMjEnNTQuNiJX!5e1!3m2!1sen!2sus!4v1713066459837!5m2!1sen!2sus"
@@ -168,7 +220,7 @@
     </main>
     <!--MAIN CONTENT ENDS-->
     <!--HELP BUTTON-->
-    <a href="#" id="icon">
+    <a href="form.html" id="icon">
       <i class="fa-solid fa-headset fa-xl actualicon"></i>
     </a>
     <!--WAVES FOOTER BEGINS <3-->
@@ -221,26 +273,30 @@
 
     <!--WAVES FOOTER ENDS <3-->
     <!-- ACTUAL FOOTER STARTS -->
-<footer>
-  <section id="top-footer">
-<div>
-  <h1>Buffalo Retreat</h1>
-  <h2>36°01'33.6"N 93°21'54.6"W<br>
-    Ponca Township, Arkansas<br></h2>
-    <h3>Follow Our Social Media:</h3>
-        <a href="https://www.facebook.com/buffnatlriver">
-
-<i class="fa-brands fa-square-facebook fa-xl"></i>
-    </a>
-    <a href=""><i class="fa-brands fa-instagram fa-xl"></i></a>
-    <a href=""><i class="fa-brands fa-twitter fa-xl"></i></a>
-</div>  
-    <div id="nps">
-      <h1>National Park Service</h1>
-    <h2>U.S. Department of the Interior<br> Stewarding Conservation and Powering Our Future </h2>
-</div>
-  </section>
-    <section id="byteof87">
+    <footer>
+      <section id="top-footer">
+        <div>
+          <h1>Buffalo Retreat</h1>
+          <h2>
+            36°01'33.6"N 93°21'54.6"W<br />
+            Ponca Township, Arkansas<br />
+          </h2>
+          <h3>Follow Our Social Media:</h3>
+          <a href="https://www.facebook.com/buffnatlriver">
+            <i class="fa-brands fa-square-facebook fa-xl"></i>
+          </a>
+          <a href=""><i class="fa-brands fa-instagram fa-xl"></i></a>
+          <a href=""><i class="fa-brands fa-twitter fa-xl"></i></a>
+        </div>
+        <div id="nps">
+          <h1>National Park Service</h1>
+          <h2>
+            U.S. Department of the Interior<br />
+            Stewarding Conservation and Powering Our Future
+          </h2>
+        </div>
+      </section>
+      <section id="byteof87">
         <p>
           The Byte of 87' &#169;
           <script language="JavaScript" type="text/javascript">
@@ -248,8 +304,8 @@
           </script>
         </p>
         <p>Made with &#9829; by Peter, Ana, Masooma, Nate, Ramsey</p>
-  </section>
-</footer>
+      </section>
+    </footer>
     <!-- ACTUAL ENDS STARTS -->
     <script type="text/javascript" src="assets/js/menu-toggle.js"></script>
     <script src="assets/js/script.js"></script>

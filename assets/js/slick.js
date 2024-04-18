@@ -8,5 +8,7 @@ $(document).ready(function () {
     cssEase: "linear",
     autoplay: true,
     autoplaySpeed: 2000,
+    prevArrow: false,
+    nextArrow: false,
   });
 });

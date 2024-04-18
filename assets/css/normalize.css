@@ -1,795 +1,352 @@
-/*---------CSS STYLE FOR BUFFALO RETREAT---------*/
-/*Made sure to make comments to ensure that it's easy to understand */
-/*NOTE: some elements are nested to make the code more efficient, becareful with those*/
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* normalize makes things consistent for every device and up to modern standards*/
 
-/* Website Branding:
--Buffalo Horns: #F4EEE4
--Buffalo Fur: #762F12
--Canoe Orange: #A1581E
--Rainwater: #879FBC
--River Blue: #226192
--Blue Tent: #113D6A
+/* Document
+   ========================================================================== */
 
-Fonts: 
-Headers: Oswald
-Paragraphs: Source Sans Pro
-*/
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
 
-/*------GLOBAL STYLING BEGINS------*/
-/*---icons---*/
-@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
-
-/*---box sizing---*/
-* {
-  box-sizing: border-box;
-}
-*:before,
-*:after {
-  box-sizing: border-box;
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
-img {
-  height: 100%;
-  width: 100%;
-  border-radius: 25px;
-  object-fit: cover;
-}
+/* Sections
+     ========================================================================== */
+
+/**
+   * Remove the margin in all browsers.
+   */
 
 body {
   margin: 0;
-  padding: 0;
-  padding-top: 60px;
-  font-family: "Source Sans 3", sans-serif;
-  color: #762f12;
-  background-color: #f4eee4;
 }
 
-a {
-  text-decoration: none;
-}
+/**
+   * Render the `main` element consistently in IE.
+   */
 
 main {
-  h1 {
-    font-family: "Oswald", sans-serif;
-    font-size: 5rem;
-  }
-  h2 {
-    font-size: 3rem;
-  }
-}
-
-.slick-pause-icon {
-  display: none;
-}
-
-/*------GLOBAL STYLING ENDS------*/
-
-/*------HEADER STYLING BEGINS------*/
-header {
-  /*---makes header sticky---*/
-  overflow: visible;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #f4eee4;
-
-  z-index: 5;
-  font-family: "Oswald", sans-serif;
-  /*---makes nav side by side with the website name---*/
-  .inner-wrap {
-    max-width: 90%;
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    overflow: visible;
-    border-bottom: dashed 2.5px rgba(118, 47, 18, 0.25);
-  }
-
-  /*---website name styling & center---*/
-  .brand {
-    display: flex;
-    h1 {
-      align-self: center;
-      font-size: 2em;
-      display: inline-block;
-      padding: 0 0 0 15px;
-      a {
-        color: #762f12;
-      }
-    }
-    img {
-      align-self: center;
-      width: 35px;
-      height: 35px;
-    }
-  }
-
-  #buffalo-icon {
-    margin-top: 12px;
-  }
-
-  /*---nav styling---*/
-  nav {
-    /*---centers nav links---*/
-    align-self: center;
-    display: flex;
-    justify-content: space-around;
-    font-family: "Oswald", sans-serif;
-
-    a {
-      color: #762f12;
-      padding-left: 16px;
-      display: inline-block;
-      vertical-align: middle;
-      text-transform: uppercase;
-      font-size: 1.1rem;
-    }
-
-    a:active,
-    a:hover,
-    a:visited {
-      color: #762f12;
-    }
-  }
-}
-
-.buffaloFur {
-  color: #762f12;
-}
-
-.canoeOrange {
-  color: #a1581e;
-}
-.nav-active {
-  right: 0;
-}
-
-.menu-toggle {
-  display: none;
-
-  svg {
-    width: 25px;
-    height: 25px;
-    align-self: center;
-    display: block;
-  }
-}
-
-/* cant use & to nest the things below to the .menu-toggle, probably not supported by native CSS */
-.menu-toggle .menu-close {
-  display: none;
-}
-
-.menu-toggle-active .menu-open {
-  display: none;
-}
-
-.menu-toggle-active .menu-close {
   display: block;
 }
-/*------HEADER STYLING ENDS------*/
-main {
-  width: 90%;
-  margin: auto;
+
+/**
+   * Correct the font size and margin on `h1` elements within `section` and
+   * `article` contexts in Chrome, Firefox, and Safari.
+   */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
 }
 
-#banner {
-  padding-bottom: 0px;
-  display: grid;
-  grid-template-areas: "bannerTitle contentPic" "bannerTitle contentPic";
-  grid-template-columns: 3fr 1fr;
-  grid-gap: 100px;
-  margin-top: 50px;
+/* Grouping content
+     ========================================================================== */
+
+/**
+   * 1. Add the correct box sizing in Firefox.
+   * 2. Show the overflow in Edge and IE.
+   */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
 }
 
-.sectionTitle {
-  grid-area: bannerTitle;
-  h1 {
-    padding-top: 25px;
-    text-align: left;
-    font-weight: 900;
-    font-size: 7rem;
-    margin: 0;
-    text-transform: uppercase;
-  }
-  h2 {
-    color: #762f12;
-    font-weight: 450;
-    line-height: 125%;
-    font-size: 20px;
-  }
+/**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
-.button {
-  padding: 8px 10px 8px 10px;
-  background-color: #226192;
-  width: max-content;
-  border-radius: 50px;
-  color: #f4eee4;
-  font-weight: 400;
-  font-size: 16px;
-  border: solid 2.5px #226192;
-  margin: 0;
-  margin-top: 50px;
+/* Text-level semantics
+     ========================================================================== */
+
+/**
+   * Remove the gray background on active links in IE 10.
+   */
+
+a {
+  background-color: transparent;
 }
 
-.button2 {
-  padding: 8px 10px 8px 10px;
-  background-color: #226192;
-  width: max-content;
-  border-radius: 50px;
-  color: #f4eee4;
-  font-weight: 400;
-  font-size: 16px;
-  border: solid 2.5px #226192;
-  margin: 0;
+/**
+   * 1. Remove the bottom border in Chrome 57-
+   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+   */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
-.button-side {
-  display: flex;
-  margin-top: 50px;
-}
-.contentPic {
-  grid-area: contentPic;
-  width: 720px;
-  height: 720px;
-}
-.contentPic img {
-  -o-object-fit: cover;
-  object-fit: cover;
-  border-radius: 25px;
+/**
+   * Add the correct font weight in Chrome, Edge, and Safari.
+   */
+
+b,
+strong {
+  font-weight: bolder;
 }
 
-/*maps*/
+/**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
 
-iframe {
-  border-radius: 25px;
-  width: 100%;
-  height: 450px;
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
-#icon {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 5vw;
-  right: 5vw;
-  background-color: #226192;
-  color: #f4eee4;
-  border-radius: 50px;
-  text-align: center;
-  z-index: 1;
+/**
+   * Add the correct font size in all browsers.
+   */
+
+small {
+  font-size: 80%;
 }
 
-.actualicon {
-  margin-top: 28px;
-}
+/**
+   * Prevent `sub` and `sup` elements from affecting the line height in
+   * all browsers.
+   */
 
-/* bubble */
-#quote {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
-
-  img {
-    height: 300px;
-    width: 300px;
-  }
-}
-.bubble {
-  margin-left: 50px;
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
   position: relative;
-  padding: 20px;
-  background: #113d69;
-  border-radius: 25px;
-  height: 300px;
-  width: 100%;
-  color: #f4eee4;
-  z-index: -1;
-  h1 {
-    font-size: 4.5rem;
-    margin: 0;
-  }
-  h2 {
-    margin: 0;
-  }
+  vertical-align: baseline;
 }
 
-.bubble.left {
-  padding-left: 50px;
-  h1 {
-    padding-bottom: 15px;
-  }
-  h2 {
-    font-weight: 400;
-  }
-  p {
-    font-size: large;
-  }
-}
-.bubble.left:after {
-  content: "";
-  position: absolute;
-  border-style: solid;
-  border-width: 16px 16px 16px 0;
-  border-color: transparent #113d69;
-  width: 0;
-  z-index: 1;
-  left: -15px;
-  top: 50%;
-  margin-top: -16px;
+sub {
+  bottom: -0.25em;
 }
 
-.bubble.left:before {
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+     ========================================================================== */
+
+/**
+   * Remove the border on images inside links in IE 10.
+   */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+     ========================================================================== */
+
+/**
+   * 1. Change the font styles in all browsers.
+   * 2. Remove the margin in Firefox and Safari.
+   */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+   * Show the overflow in IE.
+   * 1. Show the overflow in Edge.
+   */
+
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+   * Remove the inheritance of text transform in Edge, Firefox, and IE.
+   * 1. Remove the inheritance of text transform in Firefox.
+   */
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+   * Correct the inability to style clickable types in iOS and Safari.
+   */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+   * Remove the inner border and padding in Firefox.
+   */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+   * Restore the focus styles unset by the previous rule.
+   */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+   * Correct the padding in Firefox.
+   */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+   * 1. Correct the text wrapping in Edge and IE.
+   * 2. Correct the color inheritance from `fieldset` elements in IE.
+   * 3. Remove the padding so developers are not caught out when they zero out
+   *    `fieldset` elements in all browsers.
+   */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+   * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+   */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+   * Remove the default vertical scrollbar in IE 10+.
+   */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+   * 1. Add the correct box sizing in IE 10.
+   * 2. Remove the padding in IE 10.
+   */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+   * Correct the cursor style of increment and decrement buttons in Chrome.
+   */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+   * 1. Correct the odd appearance in Chrome and Safari.
+   * 2. Correct the outline style in Safari.
+   */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+   * Remove the inner padding in Chrome and Safari on macOS.
+   */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+   * 1. Correct the inability to style clickable types in iOS and Safari.
+   * 2. Change font properties to `inherit` in Safari.
+   */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+     ========================================================================== */
+
+/*
+   * Add the correct display in Edge, IE 10+, and Firefox.
+   */
+
+details {
+  display: block;
+}
+
+/*
+   * Add the correct display in all browsers.
+   */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+     ========================================================================== */
+
+/**
+   * Add the correct display in IE 10+.
+   */
+
+template {
   display: none;
 }
 
-/* */
+/**
+   * Add the correct display in IE 10.
+   */
 
-#hook {
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 50px;
-  img {
-    height: 400px;
-    object-fit: cover;
-    border-radius: 25px;
-  }
-  h1 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 3rem;
-  }
-  div:nth-child(1) {
-    color: #a1581e;
-  }
-  div:nth-child(2) {
-    color: #113d69;
-  }
+[hidden] {
+  display: none;
 }
-
-/* quotes */
-
-#testaments {
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 50px;
-}
-
-#chooseus {
-  h1 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 30px;
-    color: #113d69;
-  }
-  :nth-child(2) {
-    background-color: #226192;
-    height: 200px;
-    padding: 5%;
-    border-radius: 25px;
-    color: #f4eee4;
-  }
-}
-
-/* Slideshow container */
-.slideshow-container {
-  position: relative;
-  border-radius: 25px;
-  color: #f4eee4;
-  height: 100%;
-  h1 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 30px;
-    color: #752e12;
-  }
-}
-/* Slides */
-.mySlides {
-  text-align: center;
-  background-color: #a1581e;
-  height: 200px;
-  padding: 10%;
-  border-radius: 25px;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 62.5%;
-  width: auto;
-  margin-top: -30px;
-  padding: 16px;
-  color: #f4eee4;
-  font-weight: bold;
-  font-size: 20px;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  position: absolute;
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/*map*/
-#map {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-/*------FOOTER BEGINS------*/
-/* background of the waves*/
-.waveswrapper {
-  position: relative;
-}
-
-/*waves container*/
-.waves {
-  position: relative;
-  width: 100%;
-  height: 15vh;
-  margin-bottom: -7px; /*Fix for safari gap*/
-  min-height: 100px;
-  max-height: 150px;
-}
-
-#wavegap {
-  background-color: #113d69;
-  /*fixes the gap between waves & actual footer */
-  display: flex;
-  margin: 0;
-  border-bottom: dashed 2.5px #f4eee480;
-}
-
-footer {
-  background-color: #113d69;
-  color: #f4eee4;
-}
-
-#byteof87 {
-  width: 90%;
-  margin: auto;
-  border-bottom: dashed 2.5px #113d69;
-  display: flex;
-  justify-content: space-between;
-  color: hsla(36, 43%, 93%, 0.747);
-}
-
-#top-footer {
-  width: 90%;
-  margin: auto;
-  border-top: dashed 2.5px #113d69;
-  border-bottom: dashed 2.5px #f4eee440;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding-bottom: 20px;
-  h2 {
-    font-family: "Source Sans 3", sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-  }
-  #nps {
-    text-align: right;
-  }
-  i {
-    padding-right: 10px;
-    color: #f4eee4;
-  }
-}
-
-/* RAMSEY'S CODE */
-ol {
-  columns: 2;
-}
-
-.column {
-  float: left;
-  width: 50%;
-}
-
-/* ANA'S CODE */
-/* PJ's Code for Ana's page */
-aside {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  .container {
-    max-width: 700px;
-  }
-  section:nth-child(2) {
-    padding-left: 50px;
-  }
-}
-
-/* Customize Previous/Next/Dots/Autoplay */
-
-.slick-autoplay-toggle-button,
-.slick-prev .slick-prev-icon,
-.slick-next .slick-next-icon,
-.slick-dots li button .slick-dot-icon,
-.slick-dots li.slick-active button .slick-dot-icon {
-  color: rgba(17, 61, 106, 1);
-}
-
-/* Customize Previous/Next/Dots/Autoplay - Active State */
-
-.slick-next:focus .slick-next-icon,
-.slick-next:focus .slick-prev-icon,
-.slick-prev:focus .slick-next-icon,
-.slick-prev:focus .slick-prev-icon,
-.slick-dots li button:focus .slick-dot-icon:before,
-.slick-dots li.slick-active button:focus .slick-dot-icon,
-.slick-autoplay-toggle-button:focus {
-  color: rgba(17, 61, 106, 1);
-}
-
-.slide {
-  position: relative;
-  img {
-    max-width: 100%;
-    object-fit: cover;
-    border-radius: 50px;
-  }
-}
-
-
-.timeline {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .timeline {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  /* The actual timeline (the vertical ruler) */
-  .timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: white;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -3px;
-  }
-  
-  /* Container around content */
-  .cont {
-    padding: 10px 40px;
-    position: relative;
-    background-color: inherit;
-    width: 50%;
-  }
-  
-  /* The circles on the timeline */
-  .cont::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -17px;
-    background-color: white;
-    border: 4px solid #FF9F55;
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
-  }
-  
-  /* Place the container to the left */
-  .left {
-    left: -0.35%;
-  }
-  
-  /* Place the container to the right */
-  .right {
-    left: 50%;
-  }
-  
-  /* Add arrows to the left container (pointing right) */
-  .left::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    right: 30px;
-    border: medium solid white;
-    border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent white;
-  }
-  
-  /* Add arrows to the right container (pointing left) */
-  .right::before {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    left: 30px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
-  }
-  
-  /* Fix the circle for containers on the right side */
-  .right::after {
-    left: -16px;
-  }
-  
-  /* The actual content */
-  .content {
-    padding: 20px 30px;
-    background-color: white;
-    position: relative;
-    border-radius: 6px;
-  }
-  
-  /* Media queries - Responsive timeline on screens less than 600px wide */
-  @media screen and (max-width: 600px) {
-    /* Place the timelime to the left */
-    .timeline::after {
-    left: 31px;
-    }
-    
-    /* Full-width containers */
-    .cont {
-    width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
-    }
-    
-    /* Make sure that all arrows are pointing leftwards */
-    .cont::before {
-    left: 60px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
-    }
-  
-    /* Make sure all circles are at the same spot */
-    .left::after, .right::after {
-    left: 15px;
-    }
-    
-    /* Make all right containers behave like the left ones */
-    .right {
-    left: 0%;
-    }
-  }
-/* end of ana's code */
-
-/* masooma */
-.select-dropdown {
-  position: relative;
-  border: solid 2.5px #226192;
-  width: auto;
-  float: left;
-  border-radius: 25px;
-  margin-right: 25px;
-  select {
-    padding: 8px 24px 8px 10px;
-    color: #226192;
-    border: none;
-    background-color: transparent;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    &:active,
-    &:focus {
-      outline: none;
-      box-shadow: none;
-    }
-  }
-  &:after {
-    content: " ";
-    position: absolute;
-    top: 50%;
-    margin-top: -2px;
-    right: 8px;
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid #226192;
-  }
-}
-
-/* my code */
-.rentals:not(:last-child) {
-  margin-bottom: 50px;
-}
-/* waves animation */
-.parallax > use {
-  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
-}
-.parallax > use:nth-child(1) {
-  animation-delay: -2s;
-  animation-duration: 7s;
-}
-.parallax > use:nth-child(2) {
-  animation-delay: -3s;
-  animation-duration: 10s;
-}
-.parallax > use:nth-child(3) {
-  animation-delay: -4s;
-  animation-duration: 13s;
-}
-.parallax > use:nth-child(4) {
-  animation-delay: -5s;
-  animation-duration: 20s;
-}
-
-/*------FOOTER ENDS------*/
-
-/*------MEDIA QUERY BEGINS------*/
-/*---mobile navigation---*/
-@media screen and (max-width: 678px) {
-  header nav a {
-    text-align: center;
-  }
-}
-@media screen and (max-width: 678px) {
-  header {
-    z-index: 1;
-  }
-  header nav {
-    margin: 0;
-    background-color: #f4eee4;
-    position: absolute;
-    top: 60px;
-    right: -100%;
-    width: 100%;
-    height: calc(100vh - 60px);
-    flex-direction: column;
-    padding: 0;
-  }
-  header nav a {
-    color: #752e12;
-  }
-  header nav a:active,
-  header nav a:hover,
-  header nav a:visited {
-    color: #752e12;
-  }
-}
-@media screen and (max-width: 678px) {
-  header .menu-toggle {
-    display: flex;
-  }
-}
-
-/*---mobile waves---*/
-@keyframes move-forever {
-  0% {
-    transform: translate3d(-90px, 0, 0);
-  }
-  100% {
-    transform: translate3d(85px, 0, 0);
-  }
-}
-/*Shrinking for mobile*/
-@media (max-width: 768px) {
-  .waves {
-    height: 40px;
-    min-height: 40px;
-  }
-  .content {
-    height: 30vh;
-  }
-  h1 {
-    font-size: 24px;
-  }
-}
-/*------MEDIA QUERY ENDS------*/
