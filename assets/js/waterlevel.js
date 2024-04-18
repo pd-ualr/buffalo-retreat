@@ -25,6 +25,8 @@ async function fetchWaterLevel(startDate, endDate, siteCode, siteName) {
     }
 }
 
+//fetchwaterlevel is an async function that pulls the USGS data for a specific site, 
+
 async function createCharts(startDate, endDate, siteData) {
     const chartsGrid = document.getElementById('chartsGrid');
 
@@ -35,21 +37,24 @@ async function createCharts(startDate, endDate, siteData) {
 }
 
 function formatDate(date) {
-    const dayOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    return dayOfWeek[date.getDay()];
+    const dayOfMonth = date.getDate();
+    const abbreviatedDayOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][date.getDay()];
+    const month = date.getMonth() + 1; // Months are zero-based
+
+    return `${month}/${dayOfMonth} (${abbreviatedDayOfWeek})`;
 }
+
 
 // Function to create a chart for a specific site with provided water level data
 function createChart(siteCode, siteName, waterLevels) {
-
     const chartsGrid = document.getElementById('chartsGrid');
     const chartContainer = document.createElement('div');
-
     chartContainer.classList.add('chart-container');
     chartsGrid.appendChild(chartContainer);
 
     const canvas = document.createElement('canvas');
-    canvas.setAttribute('width'&&'height','400');
+    canvas.setAttribute('width', '400');
+    canvas.setAttribute('height', '400');
     chartContainer.appendChild(canvas);
 
     const ctx = canvas.getContext('2d');
@@ -63,28 +68,32 @@ function createChart(siteCode, siteName, waterLevels) {
             labels: labels,
             datasets: [{
                 label: `Water Level at ${siteName}`, data: data , fill: false , borderColor: 'rgb(0, 128, 0)' , borderWidth: 1 , pointRadius: 5 , pointHoverRadius: 8 , tension: 0.1,
-            }]},
-        
+            }]
+        },
         options: {
             scales: {
+                        // x axis formatting
                 x: {
                     type: 'time',
                     time: {
-                        displayFormats: { hour: 'MMM D, h:mm A'
-                    }
-                            hour: 'MMM D, h:mm A' }}
+                        displayFormats: {
+                            hour: 'MMM D, h:mm A' 
+                        }
                     },
                     title: {
-                        display: true, text: 'Date/Time'
+                        display: true,
+                        text: 'Date/Time'
                     }
                 },
-
-                y: { //y axis format
+                        // y axis formatting
+                y: {
                     title: {
-                        display: true, text: 'Water Level (ft)'
+                        display: true,
+                        text: 'Water Level (ft)'
                     },
                     ticks: {
-                        precision: 2, stepSize: 0.1
+                        precision: 2,
+                        stepSize: 0.1
                     }
                 }
             },
@@ -99,10 +108,13 @@ function createChart(siteCode, siteName, waterLevels) {
                 },
                 zoom: {
                     pan: {
-                        enabled:true,mode:'xy',speed:10,rangeMin:{x:3,y:null},rangeMax:{x:3,y:null},
+                        enabled: true, mode: 'xy', speed: 10, rangeMin: { x: 3, y: null },rangeMax: { x: 3, y: null },
                     },
                     zoom: {
-                        wheel:{enabled:true},pinch:{enabled:true},mode:'xy',limits:{max:5,min:0}
+                        wheel: { enabled: true },
+                        pinch: { enabled: true },
+                        mode: 'xy',
+                        limits: { max: 1, min: 5 }
                     }
                 }
             }
@@ -118,7 +130,19 @@ function createChart(siteCode, siteName, waterLevels) {
     });
 
     chart.zoom({
-        wheel: { enabled: true }, pinch: { enabled: true }, mode: 'xy', limits: { max: 5, min: 0 } });
+        wheel: { enabled: true }, pinch: { enabled: false}, mode: 'xy', limits: { max: 5, min: 1 }
+
+    });
+
+    canvas.addEventListener('wheel', event => {
+        if (event.ctrlKey) {
+            const deltaY = event.deltaY;
+            if (deltaY < 0 && chart.scales.y.max <= 0) {
+                event.preventDefault();
+            }
+        }
+    });
+}
 
 function createChart(siteCode, siteName, waterLevels) {
     const chartsGrid = document.getElementById('chartsGrid');
@@ -148,7 +172,7 @@ function createChart(siteCode, siteName, waterLevels) {
             scales: {
                 x: {
                     title: {
-                        display: true,
+                        display: true, text: 'Day of the Week',
                     }
                 },
                 y: {
@@ -166,11 +190,16 @@ function createChart(siteCode, siteName, waterLevels) {
                 zoom: {
                     pan: {
                         enabled: true,mode: 'xy',speed: 1,
+                        mode: 'xy',
+                        speed: 1,
                         rangeMin: { x: 3, y: null },
                         rangeMax: { x: 3, y: null }
                     },
                     zoom: {
-                        wheel: { enabled: true },pinch: { enabled: true },mode: 'xy',limits: { max: 1, min: 1 }
+                        wheel: { enabled: true },
+                        pinch: { enabled: true },
+                        mode: 'xy',
+                        limits: { max: 1, min: 1 }
                     }
                 }
             }
@@ -178,14 +207,19 @@ function createChart(siteCode, siteName, waterLevels) {
     });
 
     chart.pan({
-        enabled: true,mode: 'xy',speed: 10,
+        enabled: true,
+        mode: 'xy',
+        speed: 10,
         limits: {
             x: { min: 0, max: 10 },y: { min: 0, max: 10 },
         }
     });
 
     chart.zoom({
-        wheel: { enabled: true }, pinch: { enabled: true },mode: 'xy',limits: { max: 5, min: 0 }
+        wheel: { enabled: true },
+        pinch: { enabled: true },
+        mode: 'xy',
+        limits: { max: 5, min: 0 }
     });
 
     canvas.addEventListener('wheel', event => {
@@ -207,10 +241,25 @@ document.addEventListener('DOMContentLoaded', async function() {
         { code: '07055680', name: 'Pruitt, AR' },
         { code: '07055646', name: 'Boxley, AR' },
         { code: '07055780', name: 'Carver Access, AR' }
+
     ];
-
     await createCharts(startDate, endDate, siteData);
-
     const resetGraphBtn = document.getElementById('resetGraphBtn');
-    resetGraphBtn.addEventListener('click', resetCharts);
-});
+            resetGraphBtn.addEventListener('click', resetCharts);
+        });
+
+        async function resetCharts() {
+            const chartsGrid = document.getElementById('chartsGrid');
+            chartsGrid.innerHTML = '';
+        
+            const endDate = new Date().toISOString().slice(0, 10);
+            const startDate = new Date(new Date().getTime() - 6 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+        
+            const siteData = [
+                { code: '07055660', name: 'Ponca, AR' },
+                { code: '07055680', name: 'Pruitt, AR' },
+                { code: '07055646', name: 'Boxley, AR' },
+                { code: '07055780', name: 'Carver Access, AR' }
+            ];
+            await createCharts(startDate, endDate, siteData);
+        }

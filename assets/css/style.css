@@ -571,6 +571,21 @@ aside {
   }
 }
 
+.chart-container {
+  width: 400px;
+  height: 400px;
+  margin: 10px;
+}
+
+#chartsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Customize Previous/Next/Dots/Autoplay */
 
 .slick-autoplay-toggle-button,
