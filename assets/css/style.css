@@ -967,3 +967,7 @@ h2{
   display: none;
 }
 }
+
+.rentals:last-child, ol{
+  margin-bottom: 50px;
+}

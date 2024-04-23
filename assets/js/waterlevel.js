@@ -39,13 +39,11 @@ async function createCharts(startDate, endDate, siteData) {
 function formatDate(date) {
     const dayOfMonth = date.getDate();
     const abbreviatedDayOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][date.getDay()];
-    const month = date.getMonth() + 1; // Months are zero-based
+    const month = date.getMonth() + 1;
 
     return `${month}/${dayOfMonth} (${abbreviatedDayOfWeek})`;
 }
 
-
-// Function to create a chart for a specific site with provided water level data
 function createChart(siteCode, siteName, waterLevels) {
     const chartsGrid = document.getElementById('chartsGrid');
     const chartContainer = document.createElement('div');
