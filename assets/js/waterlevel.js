@@ -163,7 +163,7 @@ function createChart(siteCode, siteName, waterLevels) {
             labels: labels,
             datasets: [{
                 label: `Water Level at ${siteName}`,
-                data: data, fill: false, borderColor: 'rgb(0, 128, 0)',borderWidth: 1,pointRadius: 1,pointHoverRadius: 5,tension: 0.1,
+                data: data, fill: false, borderColor: 'rgb(34, 97, 146)',borderWidth: 1,pointRadius: 1,pointHoverRadius: 5,tension: 0.1,
             }]
         },
         options: {
